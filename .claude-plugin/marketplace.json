@@ -1,0 +1,21 @@
+{
+  "name": "hungryoon-0pm",
+  "owner": {
+    "name": "hungryoon"
+  },
+  "metadata": {
+    "description": "Official marketplace for 0pm plugin"
+  },
+  "plugins": [
+    {
+      "name": "0pm",
+      "source": {
+        "source": "github",
+        "repo": "hungryoon/0pm"
+      },
+      "description": "Zero PM — 4 slash commands that turn any codebase into something you can vibe code on",
+      "version": "0.1.0",
+      "license": "MIT"
+    }
+  ]
+}

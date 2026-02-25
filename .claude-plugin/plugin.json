@@ -1,0 +1,13 @@
+{
+  "name": "0pm",
+  "version": "0.1.0",
+  "description": "Zero PM — 4 slash commands that turn any codebase into something you can vibe code on",
+  "author": {
+    "name": "hungryoon"
+  },
+  "repository": "https://github.com/hungryoon/0pm",
+  "license": "MIT",
+  "keywords": ["planning", "development", "deployment", "tdd", "missions"],
+  "commands": "./commands/",
+  "hooks": "./hooks/hooks.json"
+}

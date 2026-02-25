@@ -1,0 +1,20 @@
+version: "0.1.0"
+
+language:
+  display: ko
+  document: en
+
+repos:
+  - name: 0pm
+    path: ./repos/0pm
+    type: claude-code-plugin
+    description: 0pm plugin itself (self-referencing)
+
+docs:
+  path: ./docs
+
+worktree:
+  base_dir: ./workspaces
+  auto_create: true
+  auto_cleanup: true
+  branch_prefix: "feat-"

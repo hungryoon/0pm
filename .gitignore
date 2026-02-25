@@ -1,0 +1,11 @@
+# Code repositories (git clone)
+repos/
+
+# Per-mission worktrees
+workspaces/
+
+# Local session state
+.0pm-state.json
+
+# OS
+.DS_Store
