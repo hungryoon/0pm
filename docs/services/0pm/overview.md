@@ -9,7 +9,7 @@ It enables engineers to lead planning, development, and deployment without a PM.
 
 - **Type:** Claude Code Plugin (slash commands + hooks)
 - **Language:** Markdown (prompts) + Bash (scripts)
-- **Commands:** 4 (`0sync`, `0plan`, `0dev`, `0ship`)
+- **Commands:** 5 (`0sync`, `0plan`, `0dev`, `0ship`, `0status`)
 
 ## Components
 
@@ -17,7 +17,7 @@ It enables engineers to lead planning, development, and deployment without a PM.
 |---|---|---|
 | Plugin manifest | `.claude-plugin/plugin.json` | Plugin metadata and registration |
 | Marketplace | `.claude-plugin/marketplace.json` | Marketplace listing for distribution |
-| Commands | `commands/*.md` | Slash commands (`/0pm:0sync`, `/0pm:0plan`, `/0pm:0dev`, `/0pm:0ship`) |
+| Commands | `commands/*.md` | Slash commands (`/0pm:0sync`, `/0pm:0plan`, `/0pm:0dev`, `/0pm:0ship`, `/0pm:0status`) |
 | Hooks | `hooks/hooks.json` | SessionStart hook configuration |
 | Templates | `templates/` | Document generation templates |
 | Scripts | `scripts/` | Automation scripts |
@@ -36,6 +36,7 @@ It enables engineers to lead planning, development, and deployment without a PM.
 | `/0pm:0plan` | Checkpoints → mission → tasks |
 | `/0pm:0dev` | TDD development + code review |
 | `/0pm:0ship` | Deploy verification + doc updates |
+| `/0pm:0status` | Show active mission progress and next task |
 
 ## Config Schema (`0pm.config.yaml`)
 

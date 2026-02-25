@@ -40,12 +40,14 @@
 ```
 /0pm:0plan → /0pm:0dev → /0pm:0ship
 /0pm:0sync (init + ad-hoc sync)
+/0pm:0status (check progress anytime)
 ```
 
 1. **sync**: Initialize project structure OR synchronize code↔docs (auto-detects mode)
 2. **plan**: Input checkpoints → create mission → generate tasks
 3. **dev**: Task-based TDD development + code review
 4. **ship**: Pre-deploy verification + doc updates
+5. **status**: Show active mission progress and next task
 
 ## Conventions
 

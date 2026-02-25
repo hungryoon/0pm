@@ -34,7 +34,7 @@ msg() {
         tasks_done)      printf "%s: %s/%s 태스크 완료" "$1" "$2" "$3" ;;
         all_complete)    echo " — 전부 완료! /0pm:0ship으로 배포하세요." ;;
         next_task)       printf " — 다음: %s" "$1" ;;
-        continue)        echo ". /0pm:0dev로 계속하세요." ;;
+        continue)        echo ". /0pm:0dev로 계속하세요. (/0pm:0status로 상세 확인)" ;;
       esac
       ;;
     *)
@@ -44,7 +44,7 @@ msg() {
         tasks_done)      printf "%s: %s/%s tasks done" "$1" "$2" "$3" ;;
         all_complete)    echo " — all complete! Run /0pm:0ship to deploy." ;;
         next_task)       printf " — next: %s" "$1" ;;
-        continue)        echo ". Run /0pm:0dev to continue." ;;
+        continue)        echo ". Run /0pm:0dev to continue. (/0pm:0status for details)" ;;
       esac
       ;;
   esac
