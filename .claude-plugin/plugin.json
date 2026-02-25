@@ -8,6 +8,5 @@
   "repository": "https://github.com/hungryoon/0pm",
   "license": "MIT",
   "keywords": ["planning", "development", "deployment", "tdd", "missions"],
-  "commands": "./commands/",
-  "hooks": "./hooks/hooks.json"
+  "commands": "./commands/"
 }
