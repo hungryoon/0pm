@@ -9,7 +9,7 @@ It enables engineers to lead planning, development, and deployment without a PM.
 
 - **Type:** Claude Code Plugin (slash commands + hooks)
 - **Language:** Markdown (prompts) + Bash (scripts)
-- **Commands:** 4 (`sync`, `plan`, `dev`, `ship`)
+- **Commands:** 4 (`0sync`, `0plan`, `0dev`, `0ship`)
 
 ## Components
 
@@ -17,7 +17,7 @@ It enables engineers to lead planning, development, and deployment without a PM.
 |---|---|---|
 | Plugin manifest | `.claude-plugin/plugin.json` | Plugin metadata and registration |
 | Marketplace | `.claude-plugin/marketplace.json` | Marketplace listing for distribution |
-| Commands | `commands/*.md` | Slash commands (`/0pm:sync`, `/0pm:plan`, `/0pm:dev`, `/0pm:ship`) |
+| Commands | `commands/*.md` | Slash commands (`/0pm:0sync`, `/0pm:0plan`, `/0pm:0dev`, `/0pm:0ship`) |
 | Hooks | `hooks/hooks.json` | SessionStart hook configuration |
 | Templates | `templates/` | Document generation templates |
 | Scripts | `scripts/` | Automation scripts |
@@ -32,10 +32,10 @@ It enables engineers to lead planning, development, and deployment without a PM.
 
 | Command | Description |
 |---|---|
-| `/0pm:sync` | Initialize project structure OR synchronize code↔docs (auto-detects) |
-| `/0pm:plan` | Checkpoints → mission → tasks |
-| `/0pm:dev` | TDD development + code review |
-| `/0pm:ship` | Deploy verification + doc updates |
+| `/0pm:0sync` | Initialize project structure OR synchronize code↔docs (auto-detects) |
+| `/0pm:0plan` | Checkpoints → mission → tasks |
+| `/0pm:0dev` | TDD development + code review |
+| `/0pm:0ship` | Deploy verification + doc updates |
 
 ## Config Schema (`0pm.config.yaml`)
 
@@ -56,8 +56,8 @@ docs:
 
 worktree:
   base_dir: ./workspaces   # Worktree root directory
-  auto_create: true        # Auto-create worktrees on /0pm:dev
-  auto_cleanup: true       # Auto-remove worktrees on /0pm:ship
+  auto_create: true        # Auto-create worktrees on /0pm:0dev
+  auto_cleanup: true       # Auto-remove worktrees on /0pm:0ship
   branch_prefix: "feat-"   # Branch name prefix for missions
 ```
 
@@ -75,13 +75,13 @@ worktree:
 Runs `scripts/session-start.sh` at session start to inject mission status into Claude context.
 
 **Behavior:**
-- If `0pm.config.yaml` missing → prompts user to run `/0pm:sync`
+- If `0pm.config.yaml` missing → prompts user to run `/0pm:0sync`
 - Reads `language.display` from config to localize output messages
 - If active missions exist → shows progress, next task title, and suggested next command
 - Filters out completed missions (Status: completed)
-- If all tasks done → suggests `/0pm:ship`
-- If tasks remain → suggests `/0pm:dev`
-- If no missions → suggests running `/0pm:plan`
+- If all tasks done → suggests `/0pm:0ship`
+- If tasks remain → suggests `/0pm:0dev`
+- If no missions → suggests running `/0pm:0plan`
 
 ## State File (`.0pm-state.json`)
 
@@ -94,9 +94,9 @@ Tracks the active mission across sessions. Managed by `scripts/state.sh`.
 }
 ```
 
-- Set by `/0pm:plan` when creating a new mission
-- Read by `/0pm:dev` for auto-selecting the active mission
-- Cleared by `/0pm:ship` on mission completion
+- Set by `/0pm:0plan` when creating a new mission
+- Read by `/0pm:0dev` for auto-selecting the active mission
+- Cleared by `/0pm:0ship` on mission completion
 - Gitignored — local working state, not committed
 
 ## Installation
@@ -108,5 +108,5 @@ git clone https://github.com/org/api-server repos/api-server
 /plugin marketplace add hungryoon/0pm
 /plugin install 0pm@hungryoon-0pm
 
-/0pm:sync   # first run scaffolds config, docs, templates, .gitignore
+/0pm:0sync   # first run scaffolds config, docs, templates, .gitignore
 ```

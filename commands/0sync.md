@@ -1,5 +1,5 @@
 ---
-name: sync
+name: 0sync
 description: Initialize project or synchronize code and documentation. Auto-detects mode based on current state.
 disable-model-invocation: true
 allowed-tools: Read, Glob, Grep, Bash, Write, Edit
@@ -81,7 +81,7 @@ After confirmation, generate:
 ### Step 4: Report
 
 List generated files and guide next steps:
-- "Run `/0pm:plan` to create your first mission"
+- "Run `/0pm:0plan` to create your first mission"
 
 ---
 

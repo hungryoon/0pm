@@ -1,5 +1,5 @@
 ---
-name: dev
+name: 0dev
 description: Run TDD development based on mission tasks
 disable-model-invocation: true
 allowed-tools: Read, Glob, Grep, Bash, Write, Edit, Task
@@ -11,7 +11,7 @@ You are the 0pm development agent. You systematically develop based on task docu
 
 ## Prerequisites
 
-- `docs/missions/{mission-id}/tasks.md` must exist (if not, guide to `/0pm:plan`)
+- `docs/missions/{mission-id}/tasks.md` must exist (if not, guide to `/0pm:0plan`)
 
 ## Language Setting
 
@@ -61,7 +61,7 @@ Process each task in order:
 When all tasks are done:
 - Verify all items in `tasks.md` are marked `[x]`
 - Check for missing items
-- "All tasks completed. Run `/0pm:ship` to prepare for deployment"
+- "All tasks completed. Run `/0pm:0ship` to prepare for deployment"
 
 ## Development Principles
 

@@ -20,17 +20,17 @@ git clone https://github.com/org/web-client repos/web-client
 /plugin install 0pm@hungryoon-0pm
 
 # 4. First sync scaffolds everything
-/0pm:sync
+/0pm:0sync
 ```
 
-`/0pm:sync` detects a fresh project and creates `0pm.config.yaml`, `docs/` structure, templates, and `.gitignore` automatically. Your code repos live under `repos/` (gitignored).
+`/0pm:0sync` detects a fresh project and creates `0pm.config.yaml`, `docs/` structure, templates, and `.gitignore` automatically. Your code repos live under `repos/` (gitignored).
 
 ## Usage
 
 Open Claude Code and start with sync:
 
 ```
-/0pm:sync
+/0pm:0sync
 ```
 
 First run scans each repo under `repos/`, analyzes the codebase, and scaffolds a `docs/` structure — services, domains, glossary. Subsequent runs compare code against docs and flag what's out of date.
@@ -38,7 +38,7 @@ First run scans each repo under `repos/`, analyzes the codebase, and scaffolds a
 Once docs exist, plan a mission:
 
 ```
-/0pm:plan
+/0pm:0plan
 ```
 
 Tell it what you want to build. It creates a mission document (background, AS-IS/TO-BE, impact) and a task list with affected files and test criteria.
@@ -46,7 +46,7 @@ Tell it what you want to build. It creates a mission document (background, AS-IS
 Then develop:
 
 ```
-/0pm:dev
+/0pm:0dev
 ```
 
 Works through tasks one by one using TDD. Knows which task you're on, even across sessions.
@@ -54,14 +54,14 @@ Works through tasks one by one using TDD. Knows which task you're on, even acros
 When all tasks are done:
 
 ```
-/0pm:ship
+/0pm:0ship
 ```
 
 Cross-checks checkpoints, tasks, and docs before you merge.
 
 ## What it actually does
 
-`/0pm:sync` is the important one. It scans your codebase and produces structured docs that Claude can reference in every future session. Without it, Claude guesses. With it, Claude knows what exists and what matters.
+`/0pm:0sync` is the important one. It scans your codebase and produces structured docs that Claude can reference in every future session. Without it, Claude guesses. With it, Claude knows what exists and what matters.
 
 The rest (`plan`, `dev`, `ship`) use those docs to do N→N+1 development — building on what's there instead of starting blind every time.
 
@@ -70,7 +70,7 @@ A session hook shows your current mission and next task on startup:
 ```
 [0pm] Active missions:
 feat-auth-refactor-20260301: 3/7 tasks done — next: Task 4: Add JWT middleware
-Run /0pm:dev to continue.
+Run /0pm:0dev to continue.
 ```
 
 ## Config

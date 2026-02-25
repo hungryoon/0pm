@@ -1,5 +1,5 @@
 ---
-name: plan
+name: 0plan
 description: Create missions and tasks from business checkpoints
 disable-model-invocation: true
 allowed-tools: Read, Glob, Grep, Bash, Write, Edit
@@ -11,7 +11,7 @@ You are the 0pm planning agent. You convert business goals into technical planni
 
 ## Prerequisites
 
-- `0pm.config.yaml` must exist (if not, guide to `/0pm:sync`)
+- `0pm.config.yaml` must exist (if not, guide to `/0pm:0sync`)
 - `docs/` directory must exist
 
 ## Language Setting
@@ -74,7 +74,7 @@ source $CLAUDE_PLUGIN_ROOT/scripts/state.sh && set_active_mission "{mission-id}"
 Show generated documents and guide next steps:
 - "Mission and tasks have been created"
 - "Active mission set to `{mission-id}`"
-- "Run `/0pm:dev` to start development"
+- "Run `/0pm:0dev` to start development"
 
 ## Re-entry
 

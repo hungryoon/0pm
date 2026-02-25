@@ -1,5 +1,5 @@
 ---
-name: ship
+name: 0ship
 description: Run pre-deploy verification and update documentation
 disable-model-invocation: true
 allowed-tools: Read, Glob, Grep, Bash, Write, Edit

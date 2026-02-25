@@ -14,7 +14,7 @@ fi
 
 # --- No config: prompt init ---
 if [ ! -f "$CONFIG" ]; then
-  printf '{"additionalContext": "0pm is not initialized yet. Run /0pm:sync to get started."}\n'
+  printf '{"additionalContext": "0pm is not initialized yet. Run /0pm:0sync to get started."}\n'
   exit 0
 fi
 
@@ -30,21 +30,21 @@ msg() {
     ko)
       case "$key" in
         header)          echo "[0pm] 진행 중인 미션:" ;;
-        no_missions)     echo "[0pm] 진행 중인 미션이 없습니다. /0pm:plan으로 새 미션을 만드세요." ;;
+        no_missions)     echo "[0pm] 진행 중인 미션이 없습니다. /0pm:0plan으로 새 미션을 만드세요." ;;
         tasks_done)      printf "%s: %s/%s 태스크 완료" "$1" "$2" "$3" ;;
-        all_complete)    echo " — 전부 완료! /0pm:ship으로 배포하세요." ;;
+        all_complete)    echo " — 전부 완료! /0pm:0ship으로 배포하세요." ;;
         next_task)       printf " — 다음: %s" "$1" ;;
-        continue)        echo ". /0pm:dev로 계속하세요." ;;
+        continue)        echo ". /0pm:0dev로 계속하세요." ;;
       esac
       ;;
     *)
       case "$key" in
         header)          echo "[0pm] Active missions:" ;;
-        no_missions)     echo "[0pm] No active missions. Use /0pm:plan to create one." ;;
+        no_missions)     echo "[0pm] No active missions. Use /0pm:0plan to create one." ;;
         tasks_done)      printf "%s: %s/%s tasks done" "$1" "$2" "$3" ;;
-        all_complete)    echo " — all complete! Run /0pm:ship to deploy." ;;
+        all_complete)    echo " — all complete! Run /0pm:0ship to deploy." ;;
         next_task)       printf " — next: %s" "$1" ;;
-        continue)        echo ". Run /0pm:dev to continue." ;;
+        continue)        echo ". Run /0pm:0dev to continue." ;;
       esac
       ;;
   esac

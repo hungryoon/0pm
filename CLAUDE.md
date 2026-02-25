@@ -38,8 +38,8 @@
 ## Workflow
 
 ```
-/0pm:plan → /0pm:dev → /0pm:ship
-/0pm:sync (init + ad-hoc sync)
+/0pm:0plan → /0pm:0dev → /0pm:0ship
+/0pm:0sync (init + ad-hoc sync)
 ```
 
 1. **sync**: Initialize project structure OR synchronize code↔docs (auto-detects mode)
